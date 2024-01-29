@@ -1,0 +1,12 @@
+input.ng-dirty.ng-invalid {
+    border: 2px solid red;
+}
+/* employee.component.scss */
+tr.inactive {
+    opacity: 0.5; /* Adjust the opacity as needed */
+    pointer-events: none;
+  }
+  
+  button[disabled] {
+    cursor: not-allowed;
+  }
