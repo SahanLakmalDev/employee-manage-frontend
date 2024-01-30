@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginService } from './service/login.service';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { MakePaymentComponent } from './make-payment/make-payment.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './header/header.component';
     SalaryDetailsComponent,
     LoginComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    MakePaymentComponent
   ],
   imports: [
     BrowserModule,

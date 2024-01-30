@@ -5,6 +5,7 @@ import { ActiveEmployeeComponent } from './active-employee/active-employee.compo
 import { SalaryDetailsComponent } from './salary-details/salary-details.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { MakePaymentComponent } from './make-payment/make-payment.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
     { path: 'employee', component: EmployeeComponent },
     { path: 'active-employee', component: ActiveEmployeeComponent },
     { path: 'salary-details', component: SalaryDetailsComponent },
+    {path:'make-payment', component:MakePaymentComponent}
   ]},
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];

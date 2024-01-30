@@ -61,14 +61,18 @@ export class EmployeeComponent implements OnInit{
   }
 
   deactivateEmployee(empId: string): void {
-    this.employeeService.deactivateEmployee(empId).subscribe(
-      () => {
-        this.loadAllEmployees();
-      },
-      (error) => {
-        alert('Error while deactivating employee');
-      }
-    );
+    const confirmed = window.confirm('Are you sure you want to deactivate this employee?');
+    if(confirmed){
+      this.employeeService.deactivateEmployee(empId).subscribe(
+        () => {
+          this.loadAllEmployees();
+        },
+        (error) => {
+          alert('Error while deactivating employee');
+        }
+      );
+    }
+    
   }
 
   get filteredEmployees(): Employee[] {

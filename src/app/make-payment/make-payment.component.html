@@ -1,0 +1,123 @@
+<div class="container mt-4">
+    <div>
+        <h1 class="text-center">Make Payment</h1>
+    </div>
+    <form #paymentForm="ngForm">
+        <div class="mb-4">
+            <label for="employeeId" class="form-label">
+                Employee ID
+            </label>
+            <input 
+            type="text"
+            class="form-control"
+            id="employeeId"
+            [(ngModel)]="newPayment.empId"
+            name="id"
+            pattern="E\d+"
+            required
+            #employeeId="ngModel"
+            >
+            <div
+            *ngIf="(employeeId.dirty && employeeId.invalid)"
+            class="text-danger"
+            >
+            Please enter a valid employee ID (e.g., E123)
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="year" class="form-label">
+                Year
+            </label>
+            <input 
+            type="text"
+            class="form-control"
+            id="year"
+            [(ngModel)]="newPayment.year"
+            name="year"
+            pattern="\d{4}"
+            required
+            #yearModel="ngModel"
+            >
+            <div
+            *ngIf="(yearModel.dirty && yearModel.invalid)"
+            class="text-danger"
+            >
+            Please enter a valid year (e.g., 2022)
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="month" class="form-label">
+                Month
+            </label>
+            <input 
+            type="text"
+            class="form-control"
+            id="month"
+            [(ngModel)]="newPayment.month"
+            name="month"
+            pattern="^(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)$"
+            required
+            #monthModel="ngModel"
+            >
+            <div
+            *ngIf="(monthModel.dirty && monthModel.invalid)"
+            class="text-danger"
+            >
+            Please enter a valid month (e.g., JAN)
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="salary" class="form-label">
+                Salary
+            </label>
+            <input 
+            type="number"
+            class="form-control"
+            id="salary"
+            [(ngModel)]="newPayment.salary"
+            name="salary"
+            min="0"
+            required
+            #salaryModel="ngModel"
+            >
+            <div
+            *ngIf="(salaryModel.dirty && salaryModel.invalid)"
+            class="text-danger"
+            >
+            Please enter a valid salary (e.g., 50000)
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label for="createDateTime" class="form-label">
+                Create Date and Time
+            </label>
+            <input 
+                type="datetime-local"
+                class="form-control"
+                id="createDateTime"
+                [(ngModel)]="newPayment.createDateTime"
+                name="createDateTime"
+                required
+                #createDateTimeModel="ngModel"
+            >
+            <div
+                *ngIf="(createDateTimeModel.dirty && createDateTimeModel.invalid)"
+                class="text-danger"
+            >
+                Please enter a valid date and time
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <button type="submit" class="btn btn-primary" [disabled]="paymentForm.invalid" (click)="makePayment()">Submit Payment</button>
+          </div>
+        
+          
+        
+
+    </form>
+</div>

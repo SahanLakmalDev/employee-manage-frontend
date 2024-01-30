@@ -10,7 +10,13 @@ import { Observable, Timestamp } from 'rxjs';
   createdDataTime: Date;
   empId: string;
 };
-
+  export type SalaryPayment = {
+    empId:string,
+    year:string,
+    month:string,
+    salary:number,
+    createDateTime:Date
+  };
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +32,7 @@ export class SalaryService {
     return this.http.get<Salary[]>(`${this.API_BASE_URL}/${empId}?year=${year}`);
   }
 
-  makeSalaryPayment(salary: Salary): Observable<void> {
+  makeSalaryPayment(salary: SalaryPayment): Observable<void> {
     return this.http.post<void>(`${this.API_BASE_URL}/make-payment`, salary);
   }
 

@@ -19,7 +19,6 @@ export class LoginComponent {
 
     this.loginService.loginUser(user).subscribe(
       response => {
-        alert(response);
         this.router.navigate(['/home']); // Navigate to the Home component upon successful login
       },
       error => {
