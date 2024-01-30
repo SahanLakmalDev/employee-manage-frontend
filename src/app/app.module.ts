@@ -7,11 +7,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeeService } from './service/employee.service';
 import { EmployeeComponent } from './employee/employee.component';
 import { FormsModule } from '@angular/forms';
+import { ActiveEmployeeComponent } from './active-employee/active-employee.component';
+import { SalaryDetailsComponent } from './salary-details/salary-details.component';
+import { SalaryService } from './service/salary.service';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './service/login.service';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    ActiveEmployeeComponent,
+    SalaryDetailsComponent,
+    LoginComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +31,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [EmployeeService],
+  providers: [EmployeeService, SalaryService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,73 @@
+<div class="container mt-4">
+    <div>
+        <h1 class="text-center">Salary Details</h1>
+    </div>
+    <form #salaryDetailForm="ngForm">
+        <div class="mb-4">
+            <label for="employeeId" class="form-label">
+                Employee ID
+            </label>
+            <input 
+            type="text"
+            class="form-control"
+            id="employeeId"
+            [(ngModel)]="empId"
+            name="id"
+            pattern="E\d+"
+            required
+            
+            #employeeId="ngModel"
+            >
+            <div
+            *ngIf="(employeeId.dirty && employeeId.invalid)"
+            class="text-danger"
+            >
+            Please enter a valid employee ID (e.g., E123)
+            </div>
+
+            <div class="mb-4 mt-3">
+                <label for="year"
+                class="form-label"
+                >
+                Year
+                </label>
+                <input 
+                type="text"
+                class="form-control"
+                id="year"
+                [(ngModel)]="year"
+                name="year"
+                pattern="[0-9]{4}"
+                required
+                #yearModel="ngModel"
+                >
+                <div
+                *ngIf="(yearModel.dirty && yearModel.invalid)"
+                class="text-danger"
+                >
+                Please enter a valid year
+                </div>
+            </div>
+         </div> 
+         
+         <button class="btn btn-primary" type="button" (click)="getSalaryDetails()" [disabled]="salaryDetailForm.invalid">Get Salary Details</button>
+        
+    </form>
+
+    <div *ngIf="salaryDetails.length >= 0" class="mt-4">
+        <table class="table mt-4 text-center">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Salary Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let detail of salaryDetails">
+              <td>{{ detail.month }}</td>
+              <td>{{ detail.salary }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>

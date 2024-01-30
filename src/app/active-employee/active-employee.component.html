@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div>
+      <h1 class="text-center">Active Employees</h1>
+    </div>
+  
+    <div class="employee-list">
+    
+      <table class="table mt-4 text-center table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Address</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of activeEmployees">
+            <td>{{ employee.empId }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.contact }}</td>
+            <td>{{ employee.address }}</td>
+            <td>{{ employee.status ? 'Active' : 'Inactive' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
