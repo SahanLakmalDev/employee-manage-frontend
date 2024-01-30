@@ -15,6 +15,7 @@ import { LoginService } from './service/login.service';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { MakePaymentComponent } from './make-payment/make-payment.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MakePaymentComponent } from './make-payment/make-payment.component';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    MakePaymentComponent
+    MakePaymentComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Salary, SalaryService } from '../service/salary.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-salary-details',
@@ -7,6 +8,8 @@ import { Salary, SalaryService } from '../service/salary.service';
   styleUrl: './salary-details.component.scss'
 })
 export class SalaryDetailsComponent implements OnInit{
+
+  @ViewChild ('salaryDetailForm') salaryDetailForm!:NgForm;
 
   salaryDetails:Salary[]= [];
   empId:string = '';
@@ -23,12 +26,18 @@ export class SalaryDetailsComponent implements OnInit{
     .subscribe((data) => {
       console.log("Data Received...");
       this.salaryDetails = data;
+      // this.resetForm();
 
     },
     (error) => {
       alert("Error Occurs while Fetching Data....");
+      // alert(this.empId);
+      // alert(typeof(this.year));
     }
     )
+  }
+  resetForm():void {
+    this.salaryDetailForm.resetForm();
   }
 
 

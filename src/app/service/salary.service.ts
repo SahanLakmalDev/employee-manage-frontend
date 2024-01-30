@@ -7,7 +7,7 @@ import { Observable, Timestamp } from 'rxjs';
   year: string;
   month: string;
   salary: number;
-  createdDataTime: Date;
+  createdDateTime: Date;
   empId: string;
 };
   export type SalaryPayment = {

@@ -91,6 +91,9 @@ export class EmployeeComponent implements OnInit{
   isEmployeeInactive(employee: Employee): boolean {
     return !employee.status;
   }
+  scrollToTop(): void {
+    window.scrollTo(0, 0);
+  }
 
 
 

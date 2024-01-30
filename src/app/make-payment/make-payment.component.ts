@@ -9,8 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class MakePaymentComponent {
 
-  @ViewChild('paymentForm')
-  paymentForm!: NgForm; 
+  @ViewChild('paymentForm') paymentForm!: NgForm;
 
   newPayment:SalaryPayment = {empId:'', year:'', month:'', salary:0, createDateTime:new Date()};
 
@@ -20,7 +19,7 @@ export class MakePaymentComponent {
     this.salaryService.makeSalaryPayment(this.newPayment).subscribe(
       () => {
         alert('Payment successful'); 
-        
+        this.resetForm();
       },
       (error) => {
         alert('Error while making payment');

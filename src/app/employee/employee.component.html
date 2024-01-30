@@ -125,7 +125,7 @@
                     <td>{{ employee.address }}</td>
                     <td>{{ employee.status ? 'Active' : 'Inactive' }}</td>
                     <td>
-                      <button class="btn btn-warning" (click)="editEmployee(employee)" [attr.disabled]="editingEmployee ? true : null">Edit</button>
+                      <button class="btn btn-warning" (click)="editEmployee(employee)" (click)="scrollToTop()" [attr.disabled]="editingEmployee ? true : null">Edit</button>
                       <button class="mx-2 btn btn-danger" (click)="deactivateEmployee(employee.empId)" [disabled]="!employee.status">Deactivate</button>
                     </td>
                   </tr>
@@ -135,3 +135,4 @@
         </table>
     </div>
 </div>
+

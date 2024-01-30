@@ -40,5 +40,9 @@ export class EmployeeService {
     const url = `${this.API_BASE_URL}/active`;
     return this.http.get<Employee[]>(url);
   }
+  getAllEmployees2(page: number, pageSize: number): Observable<Employee[]> {
+    const url = `${this.API_BASE_URL}?page=${page}&pageSize=${pageSize}`;
+    return this.http.get<Employee[]>(url);
+  }
 
 }

@@ -4,13 +4,13 @@
     </div>
     <form #salaryDetailForm="ngForm">
         <div class="mb-4">
-            <label for="employeeId" class="form-label">
+            <label for="empId" class="form-label">
                 Employee ID
             </label>
             <input 
             type="text"
             class="form-control"
-            id="employeeId"
+            id="empId"
             [(ngModel)]="empId"
             name="id"
             pattern="E\d+"
@@ -60,12 +60,14 @@
             <tr>
               <th>Month</th>
               <th>Salary Amount</th>
+              <!-- <th>Received Date</th> -->
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let detail of salaryDetails">
               <td>{{ detail.month }}</td>
-              <td>{{ detail.salary }}</td>
+              <td>{{ detail.salary | currency: 'LKR ' }}</td>
+              <!-- <td>{{ detail.createdDateTime | date: 'short' }}</td> -->
             </tr>
           </tbody>
         </table>
